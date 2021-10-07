@@ -14,13 +14,12 @@ public class LongestCommonPrefix {
             if(firstString.charAt(i) == secondString.charAt(i)){
                 longestCommonPrefix += firstString.charAt(i);
             } else {
-                System.out.println(firstString + " and " + secondString + " have no common prefix.");
                 break;
             }
         }
-        if (longestCommonPrefix.length() > 0){
+        if (longestCommonPrefix.length() == 0){
+            System.out.println(firstString + " and " + secondString + " have no common prefix.");
+        } else
             System.out.println("The common prefix is: " + longestCommonPrefix);
-        }
-
     }
 }
