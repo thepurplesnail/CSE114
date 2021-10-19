@@ -60,31 +60,37 @@ public class MyString1 {
         return new MyString1(iChars);
     }
 
-    public int[] split(String s) {
+    public MyString1[] split(String s) {
         int sLength = s.length(), counter = 0;
         char[] sArr = new char[sLength];
         for(int i = 0; i < sLength; i++)
             sArr[i] = s.charAt(i);
         MyString1 sMyString1 = new MyString1(sArr);
+        
+        // finding how many matches of s array in current object array
 
         for (int i = 0; i < this.length() - sLength + 1; i++) {
             MyString1 newString = this.substring(i, i + sLength);
             if (newString.equals(sMyString1))
                 counter++;
         }
-
+        
+        // initialize and populate stops array
+        
         int[] stops = new int[counter];
+        
         int k = 0;
-
+        
         for (int i = 0; i < this.length() - sLength + 1; i++) {
             MyString1 newString = this.substring(i, i + sLength);
             if (newString.equals(sMyString1)) {
                 stops[k++] = i;
             }
         }
-
-
-
-        return stops;
+        
+        
+        MyString1[] splitStrings = new MyString1[counter + 1];
+        
+        return splitStrings;
     }
 }
