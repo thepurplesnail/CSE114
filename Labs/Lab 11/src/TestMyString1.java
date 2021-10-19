@@ -1,8 +1,8 @@
 import java.util.Arrays;
 public class TestMyString1 {
     public static void main(String[] args){
-        MyString1 string1 = new MyString1(new char[]{'L','e','m','o','n',' ','j','u','i','c','e'});
-        MyString1 string2 = new MyString1(new char[]{'L','e','m','o','n','o','n',' ', 'j','u','i','c','e'});
+        MyString1 string1 = new MyString1(new char[]{'L','e','m','o','n',' ','j','u','i','o','n','c','e'});
+        MyString1 string2 = new MyString1(new char[]{'L','e','m','o','n',' ','j','u','i','c','e'});
         String string5 = "Lemon juice";
 
         System.out.println(string1.charAt(4)); // => n
@@ -26,6 +26,11 @@ public class TestMyString1 {
         System.out.println();
 
         System.out.println(Arrays.toString(string5.split("on")));
+
+        int[] arr = string1.split("on");
+
+        for (int a: arr)
+            System.out.print(a + " ");
 
     }
 }
