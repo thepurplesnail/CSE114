@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.Arrays;
+
 public class sumColumns {
     public static void main(String args[]){
         Scanner input = new Scanner(System.in);

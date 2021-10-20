@@ -87,10 +87,15 @@ public class MyString1 {
                 stops[k++] = i;
             }
         }
+<<<<<<< Updated upstream
         
         
         MyString1[] splitStrings = new MyString1[counter + 1];
         
         return splitStrings;
+=======
+
+        return stops;
+>>>>>>> Stashed changes
     }
 }

@@ -1,7 +1,7 @@
 import java.util.Arrays;
 public class TestMyString1 {
     public static void main(String[] args){
-        MyString1 string1 = new MyString1(new char[]{'L','e','m','o','n',' ','j','u','i','o','n','c','e'});
+        MyString1 string1 = new MyString1(new char[]{'L','e','m','o','n',' ','j','u','i','c','e'});
         MyString1 string2 = new MyString1(new char[]{'L','e','m','o','n',' ','j','u','i','c','e'});
         String string5 = "Lemon juice";
 
