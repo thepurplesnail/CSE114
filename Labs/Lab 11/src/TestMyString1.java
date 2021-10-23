@@ -1,7 +1,7 @@
 import java.util.Arrays;
 public class TestMyString1 {
     public static void main(String[] args){
-        MyString1 string1 = new MyString1(new char[]{'L','e','m','o','n',' ','j','u','i','c','e'});
+        MyString1 string1 = new MyString1(new char[]{'L','e','m','o','n',' ','o','n',' ','j','u','i','c','e','o','n'});
         MyString1 string2 = new MyString1(new char[]{'L','e','m','o','n',' ','j','u','i','c','e'});
         String string5 = "Lemon juice";
 
@@ -25,12 +25,16 @@ public class TestMyString1 {
             System.out.print(string3.charAt(i)); // => 123
         System.out.println();
 
-        System.out.println(Arrays.toString(string5.split("on")));
+        MyString1[] ans = string2.split("on"); // => lem juice
+        for(MyString1 a:ans){
+            for(int i = 0; i < a.length(); i++){
+                System.out.print(a.charAt(i));
+            }
+        }
 
-        int[] arr = string1.split("on");
-
-        for (int a: arr)
-            System.out.print(a + " ");
+        System.out.println();
+        for (String a:string5.split("on")) // => lem juice
+            System.out.print(a);
 
     }
 }
