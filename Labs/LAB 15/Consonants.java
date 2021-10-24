@@ -11,9 +11,8 @@ public class Vowels {
       
       for (String el:strArr){
           if(el.matches("[^aeiouAEIOU]")){
-              if(el.matches("[\\S]")){ 
+              if(el.matches("[\\S]")) 
                   count++;
-              }
           } 
       }
       System.out.print("Number of consonants entered: " + count);
