@@ -1,4 +1,4 @@
-//Check if a user entered string is a palindrome
+//count the number of vowels in a string
 import java.util.Scanner;
 public class Vowels {
     public static void main(String args[]) {
