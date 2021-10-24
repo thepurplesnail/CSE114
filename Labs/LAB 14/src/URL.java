@@ -5,10 +5,10 @@ public class URL {
     public static void main(String args[]) {
       Scanner input = new Scanner(System.in);
       System.out.print("Enter URl: ");
-      String url = input.next;
-      String protocol = "( (http(s)?|ftp):{1,2}// )?";  
-      String domain = "(www)?[\\S]+.(com|net|org|edu)/*";  
-      String path = "([\\S]+)?";
+      String url = "http://www.landofcode.com/html-tutorials/url-format.php";
+      String protocol = "( (http(s)?|ftp):{1,2}// )?";
+      String domain = "(www)?[\\S]+.(com|net|org|edu)/?";
+      String path = "[\\S]*";
       boolean isValid = url.matches(protocol + domain + path);
       if (isValid){
         System.out.println("Valid URL");
