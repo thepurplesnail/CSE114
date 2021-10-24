@@ -12,6 +12,7 @@ public class Syllables {
             totalSyl += countSyl(letterArr);
         }
         System.out.print("Number of syllables entered: " + totalSyl);
+        
     }
     
     public static int countSyl(String[] strArr){
@@ -42,6 +43,20 @@ public class Syllables {
       return count;
     }
     
+    // utah => u-tah
+    // apple => ap-ple
+    // utopia => u-to-pi-a
+    // beautiful => beau-ti-ful
+    // umbrella => um-brel-la
+    // animal => an-i-mal
+    // iowa => i-o-wa
+    /*
+    public static StringBuilder[] getSyl(int totalSyl, String[] strArr){
+        StringBuilder[] sylArr = new sylArr[totalSyl];
+        
+    }
+    */
+    
     public static int countVow(String[] strArr){
         int count = 0;
         for (String el:strArr){
@@ -51,4 +66,5 @@ public class Syllables {
         }
           return count;
     }
+    
 }
