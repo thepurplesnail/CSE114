@@ -82,6 +82,9 @@ public class Syllables {
                     while(strArr[j].matches(consonant) && j < strArr.length - 1) // keep building syllable while current element is consonant
                         syl.append(strArr[++j]);
                     while(strArr[j].matches(pseudoVowel) && j < strArr.length - 1) { //keep building syllable until current element is vowel or y
+                        if(strArr[j].matches("[iI]") && strArr[j+1].matches("[aoAO]")) { // stores ia as separate syllables
+                            break;
+                        }
                         syl.append(strArr[++j]);
                     }
                     if(j == strArr.length - 2 && strArr[j + 1].matches("[eE]") && totalSyl == 1 && j < strArr.length - 1){ // add silent e to syllable
