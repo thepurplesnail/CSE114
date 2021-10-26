@@ -10,9 +10,9 @@ public class Syllables {
         for (String word:wordArr){
             String[] letterArr = word.split(""); // split the letters in each word
             int numSylls = countSyl(letterArr);
-            StringBuilder[] sylArr = getSyl(numSylls,letterArr);
+            StringBuilder[] sylArr = getSyl(numSylls,letterArr); // initialize syllable array
             
-            for(StringBuilder syl:sylArr){
+            for(StringBuilder syl:sylArr){ // print each syllable in sylArr
                 System.out.println(syl);
             }
 
@@ -50,22 +50,6 @@ public class Syllables {
         return count;
     }
 
-    // utah => u-tah
-    // apple => ap-ple
-    // utopia => u-to-pi-a
-    // beautiful => beau-ti-ful
-    // umbrella => um-brel-la
-    // animal => an-i-mal
-    // iowa => i-o-wa
-    // asymmetrical => a-sym-met-ri-cal
-    // trumpet => trum-pet
-    // tuba => tu-ba
-    // outcome => out-come
-    // opposite => op-pos-ite
-    // comet => com-et
-    // minute => mi-nute 
-
-
     public static StringBuilder[] getSyl(int totalSyl, String[] strArr){
         StringBuilder[] sylArr = new StringBuilder[totalSyl];
         String vowel = "[aeiouAEIOU]";
@@ -80,10 +64,10 @@ public class Syllables {
                 	if(j < strArr.length - 2 && (strArr[j+2].matches(pseudoVowel)) ) { // sharp vowel
                         pointer++;
                         break;
-                    } else if (strArr[j].matches("[iIeE]") && strArr[j + 1].matches("[aoAO]")){
+                    } else if (strArr[j].matches("[iIeE]") && strArr[j + 1].matches("[aoAO]")){ // stores ia, io, ea, eo as separate syllables
                 	    pointer++;
                 	    break;
-                    } else if (strArr[j].matches("[aoAO]") && strArr[j - 1].matches("[iIeE]")) {
+                    } else if (strArr[j].matches("[aoAO]") && strArr[j - 1].matches("[iIeE]")) { // stores ia, io, ea, eo as separate syllables
                 	    pointer++;
                         break;
                     } else {
@@ -95,9 +79,9 @@ public class Syllables {
                     }
                 } else {
                 	syl.append(strArr[j]);
-                    while(!strArr[j].matches(pseudoVowel) && j < strArr.length - 1)
+                    while(strArr[j].matches(consonant) && j < strArr.length - 1) // keep building syllable while current element is consonant
                         syl.append(strArr[++j]);
-                    while(strArr[j].matches(pseudoVowel) && j < strArr.length - 1) {
+                    while(strArr[j].matches(pseudoVowel) && j < strArr.length - 1) { //keep building syllable until current element is vowel or y
                         syl.append(strArr[++j]);
                     }
                     if(j == strArr.length - 2 && strArr[j + 1].matches("[eE]") && totalSyl == 1 && j < strArr.length - 1){ // add silent e to syllable
