@@ -13,11 +13,21 @@ public class Person{
     public int getAge(){
         return age;
     }
+
     public String toString(){
-        return 
-        "name: " + name + "\n" + 
-        "email: " + email + "\n" + 
-        "phone number: " + phoneNumber + "\n" + 
-        "age: " + age;
+        return getClass() + "\n" +
+                "name: " + name;
+    }
+
+    public static void main(String[] args){
+        print(new Person());
+        print(new Student());
+        print(new Employee());
+        print(new Faculty());
+        print(new Staff());
+    }
+    public static void print(Person x){
+        System.out.println(x.toString());
+        System.out.println();
     }
 }
