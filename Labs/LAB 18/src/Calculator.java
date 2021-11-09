@@ -1,14 +1,12 @@
 import java.util.*;
 public class Calculator {
-    public static void main (String[] args){
-        System.out.print("Enter an expression: ");
-        Scanner input = new Scanner(System.in);
+    public static void main (String args[]){
         try {
-            double a = input.nextDouble();
-            String op = input.next();
-            double b = input.nextDouble();
+            double a = Double.parseDouble(args[0]);
+            String op = args[1];
+            double b = Double.parseDouble(args[2]);
             System.out.println(eval(a, b, op));
-        } catch (InputMismatchException ex1){
+        } catch (NumberFormatException ex1){
             System.out.println(ex1);
         } catch (ArithmeticException ex2){
             System.out.println(ex2);
