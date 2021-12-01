@@ -27,27 +27,27 @@ In User,  you should be able to:
 
 
 
--[ ] get the user’s username
+- [ ] get the user’s username
 
 
 
--[ ] add playlists
+- [ ] add playlists
 
 
 
--[ ] remove that specific playlist when given a String title of a playlist
+- [ ] remove that specific playlist when given a String title of a playlist
 
 
 
--[ ] get all playlists belonging to the user
+- [ ] get all playlists belonging to the user
 
 
 
--[ ] get a playlist given the playlist title
+- [ ] get a playlist given the playlist title
 
 
 
--[ ] make a collaborative playlist by writing the method void makeCollaborativePlaylist(String playlistTitle, User friend), which allows a user to add a playlist of theirs to a friend’s list of playlists. Keep in mind that it should be the same object and not a copy. If the user or their friend updates the playlist, it should update on both the user’s end and their friend’s end.
+- [ ] make a collaborative playlist by writing the method void makeCollaborativePlaylist(String playlistTitle, User friend), which allows a user to add a playlist of theirs to a friend’s list of playlists. Keep in mind that it should be the same object and not a copy. If the user or their friend updates the playlist, it should update on both the user’s end and their friend’s end.
 
 
 
@@ -55,27 +55,27 @@ In Playlist, you should be able to:
 
 
 
--[ ] get and set the playlist title
+- [ ] get and set the playlist title
 
 
 
--[ ] add a song to the playlist
+- [ ] add a song to the playlist
 
 
 
--[ ] remove a song given the song title (which will remove the first instance of the song title’s appearance)
+- [ ] remove a song given the song title (which will remove the first instance of the song title’s appearance)
 
 
 
--[ ] swap the position of two songs in the playlist by writing the method void swapSongs(Song song1, Song song2). If one or both of the songs do not exist in the playlist, then the swap does not occur.
+- [ ] swap the position of two songs in the playlist by writing the method void swapSongs(Song song1, Song song2). If one or both of the songs do not exist in the playlist, then the swap does not occur.
 
 
 
--[ ] get the total time duration of the playlist, which is calculated by adding up the duration of all the songs and returns a String in the format of “totalMinutes min, totalSeconds sec”. You do not have to convert minutes to hours.
+- [ ] get the total time duration of the playlist, which is calculated by adding up the duration of all the songs and returns a String in the format of “totalMinutes min, totalSeconds sec”. You do not have to convert minutes to hours.
 
 
 
--[ ] sort songs in the playlist by songName, which should be done by implementing the Comparable interface in the Song class. If both songs have the same name, then sort based on artistName.
+- [ ] sort songs in the playlist by songName, which should be done by implementing the Comparable interface in the Song class. If both songs have the same name, then sort based on artistName.
 
 
 
