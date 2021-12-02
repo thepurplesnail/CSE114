@@ -47,7 +47,7 @@ In User,  you should be able to:
 
 
 
-- [ ] make a collaborative playlist by writing the method void makeCollaborativePlaylist(String playlistTitle, User friend), which allows a user to add a playlist of theirs to a friend’s list of playlists. Keep in mind that it should be the same object and not a copy. If the user or their friend updates the playlist, it should update on both the user’s end and their friend’s end.
+- [ ] make a collaborative playlist by writing the method `void makeCollaborativePlaylist(String playlistTitle, User friend)`, which allows a user to add a playlist of theirs to a friend’s list of playlists. Keep in mind that it should be the same object and not a copy. If the user or their friend updates the playlist, it should update on both the user’s end and their friend’s end.
 
 
 
