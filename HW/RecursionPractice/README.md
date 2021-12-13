@@ -7,7 +7,7 @@
         }
         public static void reverse(int[] a, int low, int high){
             if(high<=low)
-            return;
+                return;
             int temp = a[low];
             a[low] = a[high];
             a[high] = temp;
@@ -18,72 +18,21 @@
         reverse([1,2,3,4,5],0,4)
         reverse([5,2,3,4,1],1,3)
         reverse([5,4,3,2,1],2,2)
-    
-    Alternative solution:
-        import java.io.File;
-        import java.io.FileNotFoundException;
-        import java.util.*;
-    
-        public class Test {
-            public static void main(String[] args) throws FileNotFoundException {
-                int[] a = {1,2,3,4,5};
-                reverse(a);
-                printRec(a);
-            }
-            public static void reverse(int[] a){
-                if(a.length<=1)
-                    return;
-                int temp = a[0];
-                a[0] = a[a.length - 1];
-                a[a.length - 1] = temp;
-                int[] b = new int[a.length - 2];
-                System.arraycopy(a, 1, b, 0, b.length);
-                reverse(b);
-                System.arraycopy(b,0,a,1,b.length);
-            }
-            public static void printRec(int[] a) {
-                printRec(a, 0);
-            }
-            public static void printRec(int[] a, int pos) {
-                if(pos<a.length) {
-                    System.out.print(a[pos]);
-                    printRec(a,pos+1);
-                }
-            }
-        }
 
 2. Write a recursive method to find out whether an array of integers is a palindrome. A palindrome can be read forward or backward; e.g. [r,a,c,e,c,a,r].
    Examples:
    palindrome([1,2,3,2,1]) returns true
    palindrome([1,2,3]) returns false
-
-        public static boolean palindrome(int[] a){
-            return palindrome(a, 0, a.length - 1);
-        }
-        public static boolean palindrome(int[] a, int low, int high){
-            if(high<=low)
-                return true;
-            if(a[low] != a[high])
-                return false;
-            return palindrome(a,low+1,high-1);
-        }
-    
-    Alternative solution:
    ```
-   public class Test {
-       public static void main(String[] args) throws FileNotFoundException {
-           int[] a = {1,2,3,2,1};
-           System.out.println(palindrome(a));
-       }
-       public static boolean palindrome(int[] a){
-           if(a.length<=1)
-               return true;
-           if(a[0] != a[a.length - 1])
-               return false;
-           int[] b = new int[a.length - 2];
-           System.arraycopy(a,1, b, 0, b.length);
-           return palindrome(b);
-       }
+   public static boolean palindrome(int[] a){
+        return palindrome(a, 0, a.length - 1);
+   }
+   public static boolean palindrome(int[] a, int low, int high){
+        if(high<=low)
+            return true;
+        if(a[low] != a[high])
+            return false;
+        return palindrome(a,low+1,high-1);
    }
    ```
     
@@ -92,31 +41,31 @@
    Example:
    compress([1,1,1,2,2,1,3,3,4,4,4,4])
    returns ArrayList([1,2,1,3,4])
-```
+    ```
     import java.util.*;
     public class Test {
-    public static void main(String[] args) {
-        int[] a = {1,1,2};
-        ArrayList b = compress(a); // {1,2}
-        for(Object i:b)
-        System.out.print(i);
-    }
-    public static ArrayList compress(int[] a){
-        ArrayList b = new ArrayList();
-        compress(a, b, 0);
-        return b;
-    }
-    public static void compress(int[] a, ArrayList b, int pos){
-        if(pos == a.length - 1) {
-            b.add(a[a.length - 1]);
-            return;
+        public static void main(String[] args) {
+            int[] a = {1,1,2};
+            ArrayList b = compress(a); // {1,2}
+            for(Object i:b)
+            System.out.print(i);
         }
-        if(a[pos]!=a[pos+1])
-            b.add(a[pos]);
-        compress(a, b, pos+1);
+        public static ArrayList compress(int[] a){
+            ArrayList b = new ArrayList();
+            compress(a, b, 0);
+            return b;
+        }
+        public static void compress(int[] a, ArrayList b, int pos){
+            if(pos == a.length - 1) {
+                b.add(a[a.length - 1]);
+                return;
+            }
+            if(a[pos]!=a[pos+1])
+                b.add(a[pos]);
+            compress(a, b, pos+1);
+        }
     }
-    }
-```
+    ```
 
 4. Write a method to compute all the permutations of an ArrayList.
 
@@ -128,7 +77,7 @@
     For each Permutation in Permutations([2,3]) insert 1 in each position:
     [[1,2,3],[2,1,3],[2,3,1]] Union
     [[1,3,2],[3,1,2],[3,2,1]] = Permutations([1,2,3])
-```
+    ```
     import java.util.*;
     public class Permutations {
         public static void main(String[] args) {
@@ -137,33 +86,33 @@
             // query for all permutations
             ArrayList<ArrayList<Object>> perms = permutations(a);
             for(ArrayList<Object> onePerm:perms){
-            for(Object e:onePerm) // print all permutations
-            System.out.println(e);
-            System.out.println();
-        }
-    }
-    public static ArrayList<ArrayList<Object>> permutations(ArrayList<Object> a) {
-        ArrayList<ArrayList<Object>> perms = new ArrayList<ArrayList<Object>>();
-        if(a.isEmpty()){
-            ArrayList<Object> onePerm = new ArrayList<Object>();
-            perms.add(onePerm);
-            return perms;
-        }
-        for(Object oneElem:a){ // take an element from the list
-            ArrayList<Object> b = (ArrayList<Object>)(a.clone());
-            b.remove(oneElem);
-            // construct all permutations of the list without that element
-            ArrayList<ArrayList<Object>> perms2 = permutations(b);
-            // add the element that you took out back to the list
-            for(ArrayList<Object> onePerm:perms2){
-                onePerm.add(oneElem);
-                perms.add(onePerm);
+                for(Object e:onePerm) // print all permutations
+                    System.out.println(e);
+                System.out.println();
             }
         }
-        return perms;
+        public static ArrayList<ArrayList<Object>> permutations(ArrayList<Object> a) {
+            ArrayList<ArrayList<Object>> perms = new ArrayList<ArrayList<Object>>();
+            if(a.isEmpty()){
+                ArrayList<Object> onePerm = new ArrayList<Object>();
+                perms.add(onePerm);
+                return perms;
+            }
+            for(Object oneElem:a){ // take an element from the list
+                ArrayList<Object> b = (ArrayList<Object>)(a.clone());
+                b.remove(oneElem);
+                // construct all permutations of the list without that element
+                ArrayList<ArrayList<Object>> perms2 = permutations(b);
+                // add the element that you took out back to the list
+                for(ArrayList<Object> onePerm:perms2){
+                    onePerm.add(oneElem);
+                    perms.add(onePerm);
+                }
+            }
+            return perms;
+        }
     }
-    }
-```
+    ```
 ----
 
 Similar solution for Powerset:
