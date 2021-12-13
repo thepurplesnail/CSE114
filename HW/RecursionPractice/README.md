@@ -48,7 +48,7 @@
             int[] a = {1,1,2};
             ArrayList b = compress(a); // {1,2}
             for(Object i:b)
-            System.out.print(i);
+                System.out.print(i);
         }
         public static ArrayList compress(int[] a){
             ArrayList b = new ArrayList();
